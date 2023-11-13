@@ -1,23 +1,24 @@
 {
-    "name": "isszz/webman-sensitive",
+    "name": "simplephp/webman-sensitive",
     "description": "Webman 敏感词检测，过滤，标记",
     "license": "MIT",
     "authors": [
         {
-            "name": "isszz",
-            "email": "isszz@qq.com"
+            "name": "simplephp",
+            "email": "841694874@qq.com"
         }
     ],
     "require": {
-        "php": ">=8.0.0",
-        "workerman/webman-framework": ">=1.4"
+        "php": ">=7.0",
+        "workerman/webman-framework": ">=1.4",
+        "ext-mbstring": "*"
     },
     "autoload": {
         "files": [
             "src/helpers.php"
         ],
         "psr-4": {
-            "isszz\\sensitive\\": "src"
+            "simplephp\\sensitive\\": "src"
         }
     },
     "config": {

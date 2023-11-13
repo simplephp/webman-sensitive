@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace isszz\sensitive;
+namespace simplephp\sensitive;
 
 class Install
 {
@@ -11,7 +11,7 @@ class Install
      * @var array
      */
     protected static $pathRelation = [
-        'config/plugin/isszz/webman-sensitive' => 'config/plugin/isszz/webman-sensitive',
+        'config/plugin/simplephp/webman-sensitive' => 'config/plugin/simplephp/webman-sensitive',
     ];
 
     /**

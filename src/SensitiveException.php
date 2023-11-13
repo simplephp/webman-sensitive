@@ -1,7 +1,8 @@
 <?php
 declare(strict_types=1);
 
-namespace isszz\sensitive;
+namespace simplephp\sensitive;
 
-class SensitiveException extends \Exception
-{}
+class SensitiveException extends \Exception{
+
+}

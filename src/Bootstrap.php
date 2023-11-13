@@ -1,23 +1,23 @@
 <?php
 declare (strict_types = 1);
 
-namespace isszz\sensitive;
+namespace simplephp\sensitive;
 
 use Webman\Bootstrap as WebmanBootstrap;
 use Workerman\Worker;
 
 class Bootstrap implements WebmanBootstrap
 {
-    protected static ?\isszz\sensitive\Sensitive $_instance = null;
+    protected static  $_instance = null;
 
-    public static function start(?Worker $worker)
+    public static function start($worker)
     {
         if ($worker) {
-            static::$_instance = new \isszz\sensitive\Sensitive;
+            static::$_instance = new \simplephp\sensitive\Sensitive;
         }
         
-        // 检测/config/plugin/isszz/webman-sensitive敏感词库不存在时复制到该目录
-        if (!is_file($file = config_path('plugin') . DIRECTORY_SEPARATOR .'isszz'. DIRECTORY_SEPARATOR .'webman-sensitive'. DIRECTORY_SEPARATOR .'SensitiveWord.txt')) {
+        // 检测/config/plugin/simplephp/webman-sensitive敏感词库不存在时复制到该目录
+        if (!is_file($file = config_path('plugin') . DIRECTORY_SEPARATOR .'simplephp'. DIRECTORY_SEPARATOR .'webman-sensitive'. DIRECTORY_SEPARATOR .'SensitiveWord.txt')) {
 
             if ((!is_dir($path = dirname($file)))) {
                 mkdir($path, 0777, true);

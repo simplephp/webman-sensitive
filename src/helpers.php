@@ -1,16 +1,17 @@
 <?php
 declare(strict_types=1);
 
-use isszz\sensitive\facade\Sensitive;
+use simplephp\sensitive\facade\Sensitive;
+use simplephp\sensitive\SensitiveException;
 
 if (!function_exists('sensitive_is')) {
     /**
      * 被检测内容是否合法
-     * 
+     *
      * @param string $content
      *
      * @return bool
-     * @throws \isszz\sensitive\SensitiveException
+     * @throws SensitiveException
      */
     function sensitive_is(string $content)
     {
@@ -27,7 +28,7 @@ if (!function_exists('sensitive_replace')) {
      * @param bool $repeat 重复替换为敏感词相同长度的字符
      *
      * @return mixed
-     * @throws \isszz\sensitive\SensitiveException
+     * @throws SensitiveException
      */
     function sensitive_replace(string $content, string $replaceChar = '', bool $repeat = false)
     {
@@ -43,7 +44,7 @@ if (!function_exists('sensitive_mark')) {
      * @param string $tag 标签开头，如mark
      *
      * @return mixed
-     * @throws \isszz\sensitive\SensitiveException
+     * @throws SensitiveException
      */
     function sensitive_mark(string $content, string $tag = '')
     {
@@ -58,9 +59,9 @@ if (!function_exists('sensitive_get')) {
      * @param string $content 待检测内容
      * @param int $wordNum 需要获取的敏感词数量，默认获取全部
      * @param int $matchType 匹配类型，默认为最小匹配规则
-     * 
+     *
      * @return array
-     * @throws \isszz\sensitive\SensitiveException
+     * @throws SensitiveException
      */
     function sensitive_get(string $content, $wordNum = 0, $matchType = 1)
     {
@@ -74,8 +75,8 @@ if (!function_exists('sensitive_custom')) {
      *
      * @param string|array $custom
      *
-     * @return \isszz\sensitive\Sensitive
-     * @throws \isszz\sensitive\SensitiveException
+     * @return \simplephp\sensitive\Sensitive
+     * @throws SensitiveException
      */
     function sensitive_custom(string $content, string $tag = '')
     {
@@ -86,12 +87,12 @@ if (!function_exists('sensitive_custom')) {
 if (!function_exists('sensitive_add')) {
     /**
      * 添加额外的敏感词
-     * 
+     *
      * @param string|array $words
-     * 
-     * @return \isszz\sensitive\Sensitive
-     */ 
-    function sensitive_add(string|array $words)
+     *
+     * @return \simplephp\sensitive\Sensitive
+     */
+    function sensitive_add($words)
     {
         return Sensitive::add($words);
     }
@@ -100,13 +101,13 @@ if (!function_exists('sensitive_add')) {
 if (!function_exists('sensitive_remove')) {
     /**
      * 删除敏感词
-     * 
+     *
      * @param string|array $words
      * @param bool $once
-     * 
-     * @return \isszz\sensitive\Sensitive
-     */ 
-    function sensitive_remove(string|array $words, bool $once = false)
+     *
+     * @return \simplephp\sensitive\Sensitive
+     */
+    function sensitive_remove($words, bool $once = false)
     {
         return Sensitive::remove($words);
     }
@@ -115,10 +116,10 @@ if (!function_exists('sensitive_remove')) {
 if (!function_exists('sensitive_interference_factor')) {
     /**
      * 添加干扰因子
-     * 
+     *
      * @param array $interferenceFactors
-     * 
-     * @return \isszz\sensitive\Sensitive
+     *
+     * @return \simplephp\sensitive\Sensitive
      */
     function sensitive_interference_factor(array $interferenceFactors)
     {
@@ -132,10 +133,10 @@ if (!function_exists('sensitive_add_word_to_file')) {
      *
      * @param string|array $data 添加的新敏感词
      * @param bool $append 是否追加模式，false时会提取后合并去掉重复再写入
-     * 
+     *
      * @return string
      */
-    function sensitive_add_word_to_file(string|array $data, bool $append = true)
+    function sensitive_add_word_to_file($data, bool $append = true)
     {
         return Sensitive::addWordToFile($data, $append);
     }
@@ -147,9 +148,9 @@ if (!function_exists('sensitive_mb_strlen')) {
      * @param string|null $encoding
      *
      * @return int
-     * @throws \isszz\sensitive\SensitiveException
+     * @throws SensitiveException
      */
-    function sensitive_mb_strlen(string $str, string|null $encoding = null)
+    function sensitive_mb_strlen(string $str, string $encoding = null)
     {
         $length = mb_strlen($str, $encoding);
 

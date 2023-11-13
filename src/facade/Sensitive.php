@@ -1,16 +1,16 @@
 <?php
 declare (strict_types = 1);
 
-namespace isszz\sensitive\facade;
+namespace simplephp\sensitive\facade;
 
 class Sensitive
 {
-    protected static ?\isszz\sensitive\Sensitive $_instance = null;
+    protected static $_instance = null;
 
     public static function instance()
     {
         if (!static::$_instance) {
-            static::$_instance = new \isszz\sensitive\Sensitive;
+            static::$_instance = new \simplephp\sensitive\Sensitive;
         }
 
         return static::$_instance;

@@ -1,18 +1,18 @@
 # webman-sensitive
+### fork on https://github.com/simplephp/webman-sensitive
 Webman 敏感词检测，过滤，标记
 
 <p>
-    <a href="https://packagist.org/packages/isszz/webman-sensitive"><img src="https://img.shields.io/badge/php->=8.0-8892BF.svg" alt="Minimum PHP Version"></a>
-    <a href="https://packagist.org/packages/isszz/webman-sensitive"><img src="https://img.shields.io/badge/webman->=1.4.x-8892BF.svg" alt="Minimum Webman Version"></a>
-    <a href="https://packagist.org/packages/isszz/webman-sensitive"><img src="https://poser.pugx.org/isszz/webman-sensitive/v/stable" alt="Stable Version"></a>
-    <a href="https://packagist.org/packages/isszz/webman-sensitive"><img src="https://poser.pugx.org/isszz/webman-sensitive/downloads" alt="Total Downloads"></a>
-    <a href="https://packagist.org/packages/isszz/webman-sensitive"><img src="https://poser.pugx.org/isszz/webman-sensitive/license" alt="License"></a>
+    <a href="https://packagist.org/packages/simplephp/webman-sensitive"><img src="https://img.shields.io/badge/webman->=1.4.x-8892BF.svg" alt="Minimum Webman Version"></a>
+    <a href="https://packagist.org/packages/simplephp/webman-sensitive"><img src="https://poser.pugx.org/simplephp/webman-sensitive/v/stable" alt="Stable Version"></a>
+    <a href="https://packagist.org/packages/simplephp/webman-sensitive"><img src="https://poser.pugx.org/simplephp/webman-sensitive/downloads" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/simplephp/webman-sensitive"><img src="https://poser.pugx.org/simplephp/webman-sensitive/license" alt="License"></a>
 </p>
 
 ## 安装
 
 ```shell
-composer require isszz/webman-sensitive
+composer require simplephp/webman-sensitive
 ```
 
 ## 配置
@@ -21,7 +21,7 @@ return [
     'enable'  => true,
 
     // 支持file，array，也可以指向自己敏感词库文件路径
-    // file模式时，敏感词库位于webman根目录的config/plugin/isszz/webman-sensitive/SensitiveWord.txt，也可以指向自定义的词库文件路径
+    // file模式时，敏感词库位于webman根目录的config/plugin/simplephp/webman-sensitive/SensitiveWord.txt，也可以指向自定义的词库文件路径
     'mode' => 'file',
 
     'config' => [
@@ -50,7 +50,7 @@ return [
 
 facade方式
 ```php
-use isszz\sensitive\facade\Sensitive;
+use simplephp\sensitive\facade\Sensitive;
 
 class Index
 {
@@ -103,7 +103,7 @@ class Index
 ```
 依赖注入方式
 ```php
-use isszz\sensitive\Sensitive;
+use simplephp\sensitive\Sensitive;
 
 class Index
 {
