@@ -1,5 +1,5 @@
 # webman-sensitive
-### fork on https://github.com/simplephp/webman-sensitive
+### fork on https://github.com/isszz/webman-sensitive
 Webman 敏感词检测，过滤，标记
 
 <p>
